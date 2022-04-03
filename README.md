@@ -1,1 +1,2 @@
 # Rock-Paper-Scissors
+Simple game of rock, paper, scissors. The whole game is played inside the console. User is asked for for selection 5 times, computer generates random selection 5 times. Selections are evaluated, score is displayed during the game. After all 5 selections have been made, winner/loser is calculated, results are shown.
