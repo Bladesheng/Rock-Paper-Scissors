@@ -4,15 +4,12 @@ function getRandomInt(min, max) {
 
 function computerPlay() {
   let computerNumber = getRandomInt(0, 3);
-  console.log(computerNumber)
-  if (computerNumber === 0) {
-    return "Rock";
+  switch (computerNumber) {
+    case 0:
+      return "rock";
+    case 1:
+      return "paper";
+    case 2:
+      return "scissors";
   }
-  else if (computerNumber === 1) {
-    return "Paper";
-  }
-  else {
-    return "Scissors";
-  }
-
 }
