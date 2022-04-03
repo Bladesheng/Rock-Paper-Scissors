@@ -1,7 +1,9 @@
+// generates ranomdom integer between min and max
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 } 
 
+// returns a random selection for the computer
 function computerPlay() {
   let computerNumber = getRandomInt(0, 3);
 
@@ -15,39 +17,41 @@ function computerPlay() {
   }
 }
 
+// evaluates players and computers selection
+// returns outcome from players perspective
 function playRound(playerSelection, computerSelection) {
-  playerSelection = playerSelection.toLowerCase()
-  computerSelection = computerSelection.toLowerCase()
+  playerSelection = playerSelection.toLowerCase();
+  computerSelection = computerSelection.toLowerCase();
 
   switch (playerSelection) {
     case "rock":
       switch (computerSelection) {
         case "rock":
-          return "x";
+          return "Tie!";
         case "paper":
-          return "x";
+          return "You Lose! Paper beats Rock";
         case "scissors":
-          return "x";
+          return "You Win! Rock beats Scissors";
       }
 
     case "paper":
       switch (computerSelection) {
         case "rock":
-          return "x";
+          return "You Win! Paper beats Rock";
         case "paper":
-          return "x";
+          return "Tie!";
         case "scissors":
-          return "x";
+          return "You Lose! Scissors beat Paper";
       }
 
     case "scissors":
       switch (computerSelection) {
         case "rock":
-          return "x";
+          return "You Lose! Rock beats Scissors";
         case "paper":
-          return "x";
+          return "You Win! Scissors beat Paper";
         case "scissors":
-          return "x";
+          return "Tie";
       }
   }
 }
