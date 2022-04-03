@@ -51,7 +51,53 @@ function playRound(playerSelection, computerSelection) {
         case "paper":
           return "You Win! Scissors beat Paper";
         case "scissors":
-          return "Tie";
+          return "Tie!";
       }
   }
 }
+
+// plays the game 5 times, displays results based on score
+function game() {
+  console.log("---Game on!---")
+  let playerScore = 0;
+  let computerScore = 0;
+
+
+  // plays 5 rounds of the game
+  for (let i = 0; i < 5; i++) {
+    let playerInput = prompt(`Rock, Paper or Scissors? \nCurrent score: [${playerScore}:${computerScore}]`);
+    
+    let outcome = playRound(playerInput, computerPlay()); // plays current round
+    console.log(outcome); // outputs the outcome of the current round
+    
+    // increments current score based on outcome
+    let outcomeShort = outcome.slice(4, 8);
+    if (outcomeShort === "Win!") {
+      playerScore++;
+    }
+    else if (outcomeShort === "Lose") {
+      computerScore++;
+    }
+  }
+
+
+  //displays results of the game
+  console.log("---Game finished!---")
+  console.log(`The final score is ${playerScore}:${computerScore} (You:Computer)`)
+  
+  if (playerScore > computerScore) {
+    console.log("You won the game!");
+  }
+  else if (playerScore < computerScore) {
+    console.log("You lost the game!");
+  }
+  else {
+    console.log("The game was a tie!")
+  }
+  
+  
+  console.log(`---Enter "game()" to play again---`)
+}
+
+// welcome message
+console.log(`---Enter "game()" to play---`)
