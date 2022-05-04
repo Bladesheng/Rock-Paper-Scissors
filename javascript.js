@@ -72,7 +72,9 @@ function resetGame() {
   computerScore = 0;
   playerSelection = "";
   computerSelection = "";
+  logText("⠀");
   logText("---------------------");
+  logText("⠀");
 }
 
 // updates the score tracker
