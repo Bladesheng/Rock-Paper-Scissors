@@ -5,7 +5,8 @@ body {
   background-color: rgb(32, 38, 46);
   color: rgb(223, 223, 223);
 
-
+  box-sizing: border-box;
+  height: 100vh;
   display: flex;
   flex-flow: column;
   gap: 30px;
@@ -25,6 +26,7 @@ button {
   flex-flow: row wrap;
   justify-content: center;
   gap: 10px;
+  flex: 0 0 auto;
 }
 
 .play-button {
@@ -74,6 +76,8 @@ button {
 
 .log {
   border: 1px solid grey;
+  flex: 1 1 auto;
+  overflow: auto;
 }
 
 .msg-dimmed {
