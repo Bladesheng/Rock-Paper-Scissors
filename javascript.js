@@ -75,6 +75,7 @@ function resetGame() {
   logText("⠀");
   logText("---------------------");
   logText("⠀");
+  unfreezeButtons();
 }
 
 // updates the score tracker
@@ -101,17 +102,16 @@ function logText (message) {
 }
 
 // player presses button
-buttons = document.querySelectorAll(".play-button");
+const buttons = document.querySelectorAll(".play-button");
 buttons.forEach((button) => {
   // plays one round depending on whatever player selected
-  button.addEventListener("click", () => {
-    playRound(button.id)});
+  button.addEventListener("click", playRound);
 })
 
 // plays one round based on the players selection
-function playRound(selection) {
-  // changes player selection and logs it
-  playerSelection = selection;
+function playRound() {
+  // changes player selection to id of clicked button and logs it
+  playerSelection = this.id;
   logText(`player: ${playerSelection}`);
 
   // computer makes random play, it is logged and variabled'
@@ -136,6 +136,7 @@ function playRound(selection) {
 
   // if either score is == 5, winner is announced, buttons are locked
   if (playerScore === 5 || computerScore === 5) {
+    freezeButtons();
     logText("---Game over!---");
     logText(`Final score is ${playerScore}:${computerScore}`)
     
@@ -149,4 +150,18 @@ function playRound(selection) {
       logText("The game was a tie!")
     }
   }
+}
+
+// freezes playing buttons (removes event listeners)
+function freezeButtons () {
+  buttons.forEach((button) => {
+    button.removeEventListener("click", playRound);
+  })
+}
+
+// unfreezes playing buttons (reataches event listeners)
+function unfreezeButtons () {
+  buttons.forEach((button) => {
+    button.addEventListener("click", playRound);
+  })
 }

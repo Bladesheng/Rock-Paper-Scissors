@@ -1,12 +1,11 @@
+disable buttons after game over
+
 button press/hover effects
 
 better colors / UI
 
-smoother game end (no pressing new game button? freeze buttons?)
-
-sounds to button presses and PC button choices
-- win round, lose round, final win/loss
-
 make the doubledot always centered
 
-better mobile scaling
+add sounds to button presses and final win/loss
+
+smoother game end (no pressing new game button?)
