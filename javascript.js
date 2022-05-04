@@ -72,8 +72,6 @@ function resetGame() {
   computerScore = 0;
   playerSelection = "";
   computerSelection = "";
-
-  logText("player reset the game");
   logText("---------------------");
 }
 
@@ -103,11 +101,11 @@ buttons.forEach((button) => {
 function playRound(selection) {
   // changes player selection and logs it
   playerSelection = selection;
-  logText(`player selected ${playerSelection}`);
+  logText(`player: ${playerSelection}`);
 
   // computer makes random play, it is logged and variabled'
   computerSelection = computerPlay();
-  logText(`computer selected ${computerSelection}`);
+  logText(`computer: ${computerSelection}`);
 
   // both selections are evaluated, outcome is logged
   let outcome = evaluateRound(playerSelection, computerSelection);
@@ -127,19 +125,19 @@ function playRound(selection) {
 
   // if either score is == 5, winner is announced, buttons are locked
   if (playerScore === 5 || computerScore === 5) {
-    logText("---Game finished!---");
-    logText(`The final score is ${playerScore}:${computerScore} (You:Computer)`)
+    logText("---Game over!---");
+    logText(`Final score is ${playerScore}:${computerScore}`)
     
     if (playerScore > computerScore) {
-      logText("You won the game!");
+      logText("You won!");
     }
     else if (playerScore < computerScore) {
-      logText("You lost the game!");
+      logText("You lost!");
     }
     else {
       logText("The game was a tie!")
     }
 
-    logText("Start new game by pressing the New game button")
+    logText('Press "New game" to play again' )
   }
 }

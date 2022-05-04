@@ -1,13 +1,15 @@
-sounds to button presses and PC button choices
-- win round, lose round, final win/loss
-
 older messages in log are darker
 scrollbar to log so it doesnt overflow the page (fixed log size)
-
-make the doubledot always centered
 
 button press/hover effects
 
 better colors / UI
+
+smoother game end (no pressing new game button? freeze buttons?)
+
+sounds to button presses and PC button choices
+- win round, lose round, final win/loss
+
+make the doubledot always centered
 
 better mobile scaling
