@@ -1,3 +1,9 @@
+// initializes the game
+let playerScore = 0;
+let computerScore = 0;
+let playerSelection = "";
+let computerSelection = "";
+
 // generates ranomdom integer between min and max
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -19,7 +25,7 @@ function computerPlay() {
 
 // evaluates players and computers selection
 // returns outcome from players perspective
-function playRound(playerSelection, computerSelection) {
+function evaluateRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
   computerSelection = computerSelection.toLowerCase();
 
@@ -56,48 +62,84 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// plays the game 5 times, displays results based on score
-function game() {
-  console.log("---Game on!---")
-  let playerScore = 0;
-  let computerScore = 0;
+// new game button - sets score and counter to 0:0
+const newGameBtn = document.querySelector(".new-game");
+newGameBtn.addEventListener("click", resetGame);
 
+function resetGame() {
+  updateScoreTracker(0, 0);
+  playerScore = 0;
+  computerScore = 0;
+  playerSelection = "";
+  computerSelection = "";
 
-  // plays 5 rounds of the game
-  for (let i = 0; i < 5; i++) {
-    let playerInput = prompt(`Rock, Paper or Scissors? \nCurrent score: [${playerScore}:${computerScore}]`);
-    
-    let outcome = playRound(playerInput, computerPlay()); // plays current round
-    console.log(outcome); // outputs the outcome of the current round
-    
-    // increments current score based on outcome
-    let outcomeShort = outcome.slice(4, 8);
-    if (outcomeShort === "Win!") {
-      playerScore++;
-    }
-    else if (outcomeShort === "Lose") {
-      computerScore++;
-    }
-  }
-
-
-  //displays results of the game
-  console.log("---Game finished!---")
-  console.log(`The final score is ${playerScore}:${computerScore} (You:Computer)`)
-  
-  if (playerScore > computerScore) {
-    console.log("You won the game!");
-  }
-  else if (playerScore < computerScore) {
-    console.log("You lost the game!");
-  }
-  else {
-    console.log("The game was a tie!")
-  }
-  
-  
-  console.log(`---Enter "game()" to play again---`)
+  logText("player reset the game");
+  logText("---------------------");
 }
 
-// welcome message
-console.log(`---Enter "game()" to play---`)
+// updates the score tracker
+function updateScoreTracker(first, second) {
+  const scoreTracker = document.querySelector(".score-tracker");
+  scoreTracker.textContent = `${first}:${second}`;
+}
+
+// creates div element with the message in the log
+function logText (message) {
+  const logElem = document.querySelector(".log");
+  const div = document.createElement("div");
+  div.textContent = message;
+  logElem.prepend(div);
+}
+
+// player presses button
+buttons = document.querySelectorAll(".play-button");
+buttons.forEach((button) => {
+  // plays one round depending on whatever player selected
+  button.addEventListener("click", () => {
+    playRound(button.id)});
+})
+
+// plays one round based on the players selection
+function playRound(selection) {
+  // changes player selection and logs it
+  playerSelection = selection;
+  logText(`player selected ${playerSelection}`);
+
+  // computer makes random play, it is logged and variabled'
+  computerSelection = computerPlay();
+  logText(`computer selected ${computerSelection}`);
+
+  // both selections are evaluated, outcome is logged
+  let outcome = evaluateRound(playerSelection, computerSelection);
+  logText(outcome);
+  
+  // increments winners score based on outcome
+  let outcomeShort = outcome.slice(4, 8);
+  if (outcomeShort === "Win!") {
+    playerScore++;
+  }
+  else if (outcomeShort === "Lose") {
+    computerScore++;
+  }
+
+  // tracker is updated
+  updateScoreTracker(playerScore, computerScore)
+
+  // if either score is == 5, winner is announced, buttons are locked
+  if (playerScore === 5 || computerScore === 5) {
+    logText("---Game finished!---");
+    logText(`The final score is ${playerScore}:${computerScore} (You:Computer)`)
+    
+    if (playerScore > computerScore) {
+      logText("You won the game!");
+    }
+    else if (playerScore < computerScore) {
+      logText("You lost the game!");
+    }
+    else {
+      logText("The game was a tie!")
+    }
+
+    logText("Start new game by pressing the New game button")
+  }
+}
