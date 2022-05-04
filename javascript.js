@@ -81,10 +81,19 @@ function updateScoreTracker(first, second) {
   scoreTracker.textContent = `${first}:${second}`;
 }
 
-// creates div element with the message in the log
+// logs messages into log
 function logText (message) {
+  // makes all older messages dimmed
+  const oldMessages = document.querySelectorAll(".msg");
+  // extracts all messages except the last 3  
+  Array.from(oldMessages).slice(2, 3).forEach((msg) => {
+    msg.classList.add("msg-dimmed");
+  })
+  
+  // creates div element with the message in the log
   const logElem = document.querySelector(".log");
   const div = document.createElement("div");
+  div.classList.add("msg");
   div.textContent = message;
   logElem.prepend(div);
 }
@@ -137,7 +146,5 @@ function playRound(selection) {
     else {
       logText("The game was a tie!")
     }
-
-    logText('Press "New game" to play again' )
   }
 }

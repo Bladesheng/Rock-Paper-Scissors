@@ -1,4 +1,3 @@
-older messages in log are darker
 scrollbar to log so it doesnt overflow the page (fixed log size)
 
 button press/hover effects

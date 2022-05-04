@@ -75,3 +75,7 @@ button {
 .log {
   border: 1px solid grey;
 }
+
+.msg-dimmed {
+  color: grey;
+}
