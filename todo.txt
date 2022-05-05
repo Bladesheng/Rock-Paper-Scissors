@@ -1,7 +1,9 @@
+fix transition on new game button
+
 better colors / UI
 
 make the doubledot always centered
 
 add sounds to button presses and final win/loss
 
-smoother game end (no pressing new game button?)
+cz lokalizace
