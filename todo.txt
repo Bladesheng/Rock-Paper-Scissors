@@ -1,7 +1,3 @@
-disable buttons after game over
-
-button press/hover effects
-
 better colors / UI
 
 make the doubledot always centered
