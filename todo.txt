@@ -1,9 +1,8 @@
-fix transition on new game button
-
-better colors / UI
-
 make the doubledot always centered
+- fix font on chrome on windows
 
 add sounds to button presses and final win/loss
 
-cz lokalizace
+disable button animations after game over
+maybe dim them
+make the new game button glow more

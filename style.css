@@ -44,7 +44,7 @@ button:active {
 .play-button {
   flex: 1 0 0;
 
-  border: 5px solid rgb(187, 0, 0);
+  border: 5px solid rgb(124, 129, 141);
   border-radius: 15px;
   background-color: rgb(53, 60, 70);
   font-size: 30px;
@@ -55,12 +55,12 @@ button:active {
 
 .play-button:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 1rem rgba(255, 0, 0, 0.6);
+  box-shadow: 0 0 1rem rgba(91, 101, 114, 0.6);
 }
 
 .play-button:active {
   transform: scale(0.98);
-  box-shadow: 0 0 1rem rgba(255, 0, 0, 0.5);
+  box-shadow: 0 0 1rem rgba(91, 101, 114, 0.5);
 }
 
 
@@ -75,11 +75,11 @@ button:active {
 }
 
 .score-tracker {
-  border: 1px solid grey;
+  border: 2px solid grey;
   height: 56px;
   font-size: 70px;
   background-color: black;
-  color: red;
+  color: rgb(158, 210, 255);
   font-family:'digital-clock-font';
   text-align: center;
 
@@ -88,8 +88,8 @@ button:active {
 }
 
 .new-game {
-  border: 1px solid grey;
-  border-radius: 5px;
+  border: 2px solid grey;
+  border-radius: 10px;
   background-color: rgb(53, 60, 70);
   font-size: 20px;
   padding: 0px 0px;
@@ -99,7 +99,9 @@ button:active {
 
 
 .log {
-  border: 1px solid grey;
+  border: 3px solid grey;
+  border-radius: 10px;
+  padding: 10px;
   flex: 1 1 auto;
   overflow: auto;
 }
