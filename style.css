@@ -87,7 +87,7 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2px 2px 0px 5px;
+  padding: 3px 2px 0px 5px;
 }
 
 .new-game {

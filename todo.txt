@@ -1,7 +1,0 @@
-fix font on chrome on windows
-
-add sounds to button presses and final win/loss
-
-disable button animations after game over
-maybe dim them
-make the new game button glow more
