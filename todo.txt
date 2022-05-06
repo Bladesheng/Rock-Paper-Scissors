@@ -1,5 +1,4 @@
-make the doubledot always centered
-- fix font on chrome on windows
+fix font on chrome on windows
 
 add sounds to button presses and final win/loss
 

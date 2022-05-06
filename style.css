@@ -71,7 +71,7 @@ button:active {
 
 @font-face{
   font-family:'digital-clock-font';
-  src: url('./fonts/digital-7.ttf');
+  src: url('./fonts/digital-8.otf');
 }
 
 .score-tracker {
@@ -84,7 +84,10 @@ button:active {
   text-align: center;
 
   flex: 0 1 85px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 2px 0px 5px;
 }
 
 .new-game {
