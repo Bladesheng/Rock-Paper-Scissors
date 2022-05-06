@@ -29,9 +29,6 @@ button:active {
   box-shadow: 0 0 1rem rgba(91, 101, 114, 0.5);
 }
 
-
-
-
 .controls {
   height: 100px;
   display: flex;
