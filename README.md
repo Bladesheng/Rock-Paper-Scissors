@@ -1,2 +1,6 @@
 # Rock-Paper-Scissors
-Simple game of rock, paper, scissors. Now also with a nice UI. Works great on mobile too. 
+Good old rock, paper, scissors with a simple UI. Also works on mobile.
+
+Check it out here: https://bladesheng.github.io/Rock-Paper-Scissors/
+
+Built as a part of The Odin Project course: https://www.theodinproject.com/
